@@ -49,7 +49,7 @@
 
 ### Useful resources
 
-<!-- - [Routers](https://youtube.com/playlist?list=PL4cUxeGkcC9gZD-Tvwfod2gaISzfRiP9d) - The Net Ninja helped me understand the basic concept of Routers, Switch, and Params. -->
+- [React Switch](https://www.npmjs.com/package/react-switch) - package used for creating toggle switch
 
 ## Author
 
