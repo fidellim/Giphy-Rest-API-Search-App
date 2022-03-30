@@ -12,10 +12,7 @@
   - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
   - [Links](#links)
-- [My process](#my-process)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
+- [Useful resources](#useful-resources)
 - [Author](#author)
 
 ## Overview
@@ -41,15 +38,10 @@
 - Solution URL: [Solution]()
 - Live Site URL: [Live Site]()
 
-## My process
+## Useful resources
 
-### What I learned
-
-### Continued development
-
-### Useful resources
-
-- [React Switch](https://www.npmjs.com/package/react-switch) - package used for creating toggle switch
+- [React Switch](https://www.npmjs.com/package/react-switch) - package used for creating toggle switch]
+- [Dark Mode Switcher](https://medium.com/swlh/dark-mode-using-css-variables-cf065a7fa133)
 
 ## Author
 
