@@ -1,5 +1,11 @@
 # Giphy Rest API Search App
 
+![React](https://img.shields.io/badge/-React-61DAFB?logo=react&logoColor=white&logoWidth=25)
+![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?logo=typescript&logoColor=white&logoWidth=25)
+![Redux](https://img.shields.io/badge/-Redux-764ABC?logo=redux&logoColor=white&logoWidth=25)
+![Bootstrap](https://img.shields.io/badge/-Bootstrap-7952B3?logo=bootstrap&logoColor=white&logoWidth=25)
+![Heroku](https://img.shields.io/badge/-Heroku-430098?logo=heroku&logoColor=white&logoWidth=25)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ### `npm start`
