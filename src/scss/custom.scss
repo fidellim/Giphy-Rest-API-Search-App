@@ -1,0 +1,24 @@
+:root[data-theme="theme-light"] {
+	--primary-color: #45a5ff;
+	--secondary-color: #a2d2ff;
+	--text-color: #000;
+}
+
+:root[data-theme="theme-dark"] {
+	--primary-color: #003566;
+	--secondary-color: #165c9e;
+	--text-color: #afb4b8;
+}
+
+body {
+	background-color: var(--secondary-color) !important;
+	transition: all 0.4s ease;
+}
+
+.navbar {
+	background-color: var(--primary-color);
+}
+
+.navbarTitle {
+	color: var(--text-color);
+}
