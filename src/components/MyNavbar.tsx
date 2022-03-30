@@ -31,9 +31,9 @@ const MyNavbar = () => {
               height="30"
               className="d-inline-block align-top"
             />
-            <h4 className="ms-3 d-inline navbarTitle">
+            <h3 className="ms-3 d-inline navbarTitle">
               Giphy REST API
-            </h4>
+            </h3>
           </Navbar.Brand>
           <Switch
             onChange={handleToggle}
