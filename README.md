@@ -6,6 +6,57 @@
 ![Bootstrap](https://img.shields.io/badge/-Bootstrap-7952B3?logo=bootstrap&logoColor=white&logoWidth=25)
 ![Heroku](https://img.shields.io/badge/-Heroku-430098?logo=heroku&logoColor=white&logoWidth=25)
 
+## Table of contents
+
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
+
+## Overview
+
+### The challenge
+
+- [x] Build an Angular / React, or Vue web app
+- [ ] Consume Giphy REST Api for search
+- [ ] The app should deal with data using Redux design pattern on Angular/React
+- [ ] User should be able to search gifs by names
+- [ ] Gifs should be presented in a grid
+- [ ] Data pagination needs to be on. the app should fetch 10 results per call. Once the user
+      scrolls to the end of a page, another batch of data gets loaded and presented to the user
+- [ ] The app should be deployed to AWS, GCP, Azure, or Heroku
+- [x] Whatever framework is used, the app should be built on Typescript (not Javascript)
+
+### Screenshot
+
+<!-- ![Solution PC Dark](./images/Solution-PC-Dark.png) -->
+
+### Links
+
+- Solution URL: [Solution]()
+- Live Site URL: [Live Site]()
+
+## My process
+
+### What I learned
+
+### Continued development
+
+### Useful resources
+
+<!-- - [Routers](https://youtube.com/playlist?list=PL4cUxeGkcC9gZD-Tvwfod2gaISzfRiP9d) - The Net Ninja helped me understand the basic concept of Routers, Switch, and Params. -->
+
+## Author
+
+- Website - [Fidel Lim](https://fidellim-portfolio.netlify.app/)
+- Frontend Mentor - [@fidellim](https://www.frontendmentor.io/profile/fidellim)
+- Github - [@fidellim](https://github.com/fidellim)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ### `npm start`
