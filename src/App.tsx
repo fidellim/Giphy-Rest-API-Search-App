@@ -1,13 +1,14 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Container from 'react-bootstrap/Container';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import MyNavbar from './components/MyNavbar';
 
-function App() {
+
+const App = () => {
   return (
-    <div className="App" style={{background:"grey", height:"100vh"}}>
-      <p>Hi</p>        
+    <div>
+      <MyNavbar />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
