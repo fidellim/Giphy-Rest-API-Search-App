@@ -1,11 +1,23 @@
 :root[data-theme="theme-light"] {
 	--primary-color: #45a5ff;
 	--secondary-color: #a2d2ff;
-	--text-color: #000;
+	--search-bg-color: #184e77;
+	--search-outline-color: #ffe8d6;
+	--search-text-color: #a2d2ff;
+	--text-color: rgb(44, 44, 44);
+	--search-icon-color: #a2d2ff;
+	--search-btn-color: #0077b6;
+	--search-btn-txt-color: #f3f3f3;
 }
 
 :root[data-theme="theme-dark"] {
 	--primary-color: #003566;
 	--secondary-color: #165c9e;
-	--text-color: #afb4b8;
+	--search-bg-color: #a2d2ff;
+	--search-outline-color: #ffe8d6;
+	--search-text-color: #003566;
+	--text-color: #f3f3f3;
+	--search-icon-color: #003566;
+	--search-btn-color: #169bf7;
+	--search-btn-txt-color: #f3f3f3;
 }
