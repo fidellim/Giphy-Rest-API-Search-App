@@ -1,0 +1,8 @@
+.button:active {
+	transform: scale(0.97);
+}
+
+.search-button {
+	background-color: var(--search-btn-color);
+	color: var(--search-btn-txt-color);
+}

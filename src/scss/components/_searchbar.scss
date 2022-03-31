@@ -1,0 +1,20 @@
+.search-bar:focus,
+.search-bar:active {
+	border: 2px solid var(--search-outline-color);
+}
+
+.search-bar {
+	border: 2px solid var(--secondary-color);
+	background-color: var(--search-bg-color);
+	color: var(--search-text-color);
+	font-weight: 600;
+
+	&::placeholder {
+		font-weight: 600;
+		// color: white ;
+	}
+}
+
+.search-icon {
+	color: var(--search-icon-color);
+}
