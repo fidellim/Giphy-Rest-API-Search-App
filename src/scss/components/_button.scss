@@ -6,3 +6,27 @@
 	background-color: var(--search-btn-color);
 	color: var(--search-btn-txt-color);
 }
+
+.buttonScroll {
+	width: 45px;
+	height: 45px;
+	background-color: var(--scroll-btn-color);
+	cursor: pointer;
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility 0s linear 300ms, opacity 300ms;
+
+	&.fadeIn {
+		visibility: visible;
+		opacity: 1;
+		transition: visibility 0s linear 0s, opacity 300ms;
+	}
+
+	&:active {
+		transform: scale(0.97);
+	}
+}
+
+.up-arrow-icon {
+	color: var(--up-arrow-icon-color);
+}
