@@ -4,6 +4,7 @@
 ![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?logo=typescript&logoColor=white&logoWidth=25)
 ![Redux](https://img.shields.io/badge/-Redux-764ABC?logo=redux&logoColor=white&logoWidth=25)
 ![Bootstrap](https://img.shields.io/badge/-Bootstrap-7952B3?logo=bootstrap&logoColor=white&logoWidth=25)
+![SASS](https://img.shields.io/badge/-SASS-CC6699?logo=sass&logoColor=white&logoWidth=25)
 ![Heroku](https://img.shields.io/badge/-Heroku-430098?logo=heroku&logoColor=white&logoWidth=25)
 
 ## Table of contents
@@ -42,6 +43,10 @@
 
 - [React Switch](https://www.npmjs.com/package/react-switch) - package used for creating toggle switch]
 - [Dark Mode Switcher](https://medium.com/swlh/dark-mode-using-css-variables-cf065a7fa133)
+- [Env variables w/o using dotenv - I](https://stackoverflow.com/questions/49579028/adding-an-env-file-to-react-project)
+- [Env variables w/o using dotenv - II](https://create-react-app.dev/docs/adding-custom-environment-variables/)
+- [Search bar inspiration](https://dribbble.com/shots/10874936-Search-Component-with-Autocomplete)
+- [ReactDOM.render not supported in React 18](https://dev.to/osmanforhad/react-js-warning-reactdomrender-is-no-longer-supported-in-react-18-use-createroot-instead-until-you-switch-to-the-new-api-1jhh)
 
 ## Author
 
