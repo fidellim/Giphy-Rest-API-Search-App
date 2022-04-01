@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import Container from "react-bootstrap/Container";
 import SearchIcon from "@mui/icons-material/Search";
-import { GiphyFetch } from "@giphy/js-fetch-api";
+import CloseIcon from "@mui/icons-material/Close";
+import { GifsResult, GiphyFetch } from "@giphy/js-fetch-api";
 import { Gif, Grid } from "@giphy/react-components";
 import ResizeObserver from "react-resize-observer";
 import { IGif } from "@giphy/js-types";
@@ -11,21 +12,22 @@ const giphyFetch = new GiphyFetch(GIPHY_API);
 
 type Props = {
 	onGifClick: (gif: IGif, e: React.SyntheticEvent<HTMLElement, Event>) => void;
-	searchName: string;
+	query: string;
+	fetchGifs: (offset: number) => Promise<GifsResult>;
 };
 
-const GridDemo = ({ onGifClick, searchName }: Props) => {
-	const fetchGifs = (offset: number) =>
-		giphyFetch.search(searchName, { offset, limit: 10 });
+const GridDemo = ({ onGifClick, fetchGifs, query }: Props) => {
 	const [width, setWidth] = useState(window.innerWidth);
 	return (
 		<>
 			<Grid
+				key={query}
 				onGifClick={onGifClick}
 				fetchGifs={fetchGifs}
 				width={width}
-				columns={5}
-				gutter={6}
+				columns={3}
+				gutter={15}
+				borderRadius={10}
 			/>
 			<ResizeObserver
 				onResize={({ width }) => {
@@ -37,9 +39,24 @@ const GridDemo = ({ onGifClick, searchName }: Props) => {
 };
 
 const SearchBar = () => {
+	const [searchGif, setSearchGif] = useState<string>("");
+	const [query, setQuery] = useState<string>(searchGif);
+	const [isStart, setIsStart] = useState<boolean>(true);
 	const [modalGif, setModalGif] = useState<IGif>();
+
 	const handleSearch = (e: React.MouseEvent<HTMLButtonElement>) => {
 		e.preventDefault();
+		setQuery(searchGif);
+		setIsStart(false);
+		console.log(query);
+	};
+
+	const handleCloseBtn = () => {
+		setSearchGif("");
+	};
+
+	const updateSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+		setSearchGif(e.target.value);
 	};
 
 	return (
@@ -52,10 +69,16 @@ const SearchBar = () => {
 							<input
 								// data-testid="inputUser"
 								type="text"
-								className="search-bar w-100 py-2 ps-6 pe-2 rounded"
+								className="search-bar w-100 py-2 ps-6 pe-2 rounded-3"
 								placeholder="Search a GIF"
-								// value=""
-								// onChange={}
+								value={searchGif}
+								onChange={updateSearch}
+							/>
+							<CloseIcon
+								className={`close-icon fs-3 position-absolute top-50 end-0 translate-middle me-2 ${
+									searchGif ? "fadeIn" : "fadeOut"
+								}`}
+								onClick={handleCloseBtn}
 							/>
 						</div>
 
@@ -77,8 +100,26 @@ const SearchBar = () => {
 							e.preventDefault();
 							setModalGif(gif);
 						}}
-						searchName="cat"
+						fetchGifs={(offset: number) =>
+							giphyFetch.search(query, { offset, limit: 10 })
+						}
+						query={query}
 					/>
+					{isStart && (
+						<GridDemo
+							onGifClick={(
+								gif: IGif,
+								e: React.SyntheticEvent<HTMLElement, Event>
+							) => {
+								e.preventDefault();
+								setModalGif(gif);
+							}}
+							fetchGifs={(offset: number) =>
+								giphyFetch.trending({ offset, limit: 10 })
+							}
+							query={"trending"}
+						/>
+					)}
 					{modalGif && (
 						<div
 							style={{
