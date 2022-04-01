@@ -9,6 +9,16 @@ $spacers: (
 	6: $spacer * 5,
 ) !default;
 
+$position-values: (
+	0: 0,
+	1: 1%,
+	2: 2%,
+	10: 10%,
+	50: 50%,
+	90: 90%,
+	100: 100%,
+);
+
 @import "../../../node_modules/bootstrap/scss/functions";
 @import "../../../node_modules/bootstrap/scss/variables";
 @import "../../../node_modules/bootstrap/scss/mixins";
