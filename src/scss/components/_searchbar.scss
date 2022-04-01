@@ -18,3 +18,19 @@
 .search-icon {
 	color: var(--search-icon-color);
 }
+
+.close-icon {
+	color: var(--close-icon-color);
+	cursor: pointer;
+
+	&.fadeOut {
+		visibility: hidden;
+		opacity: 0;
+		transition: visibility 0s linear 300ms, opacity 300ms;
+	}
+	&.fadeIn {
+		visibility: visible;
+		opacity: 1;
+		transition: visibility 0s linear 0s, opacity 300ms;
+	}
+}
