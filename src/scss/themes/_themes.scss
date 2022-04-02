@@ -7,11 +7,13 @@
 	--text-color: rgb(44, 44, 44);
 	--search-icon-color: #a2d2ff;
 	--search-btn-color: #0077b6;
-	--search-btn-txt-color: #f3f3f3;
+	--search-btn-txt-color: #ffffff;
 	--search-placeholder-color: #a2d2ff;
 	--close-icon-color: #a2d2ff;
 	--scroll-btn-color: #184e77;
 	--up-arrow-icon-color: #a2d2ff;
+	--no-result-bg-color: #5c5c97;
+	--no-result-txt-color: #cce5fd;
 }
 
 :root[data-theme="theme-dark"] {
@@ -22,10 +24,12 @@
 	--search-text-color: #003566;
 	--text-color: #f3f3f3;
 	--search-icon-color: #003566;
-	--search-btn-color: #169bf7;
-	--search-btn-txt-color: #f3f3f3;
+	--search-btn-color: #003566;
+	--search-btn-txt-color: #ffffff;
 	--search-placeholder-color: #003566;
 	--close-icon-color: #003566;
 	--scroll-btn-color: #a2d2ff;
 	--up-arrow-icon-color: #003566;
+	--no-result-bg-color: #062432;
+	--no-result-txt-color: #b3d6f7;
 }
