@@ -50,7 +50,6 @@ const SearchBar = () => {
 		e.preventDefault();
 		setQuery(searchGif);
 		setIsStart(false);
-		console.log(query);
 	};
 
 	const handleCloseBtn = () => {
@@ -65,32 +64,34 @@ const SearchBar = () => {
 		<>
 			<main className="pt-5 pb-3">
 				<Container>
-					<form className="d-flex flex-column flex-sm-row py-3 align-items-center justify-content-center">
-						<div className="position-relative w-100  me-sm-2 mb-2 mb-sm-0">
-							<SearchIcon className="search-icon fs-3 position-absolute top-50 start-0 translate-middle ms-5" />
-							<input
-								// data-testid="inputUser"
-								type="text"
-								className="search-bar w-100 py-2 ps-6 pe-2 rounded-3"
-								placeholder="Search a GIF"
-								value={searchGif}
-								onChange={updateSearch}
-							/>
-							<CloseIcon
-								className={`close-icon fs-3 position-absolute top-50 end-0 translate-middle me-2 ${
-									searchGif ? "fadeIn" : "fadeOut"
-								}`}
-								onClick={handleCloseBtn}
-							/>
-						</div>
+					<div className="row justify-content-center">
+						<form className="col-12 col-md-9 d-flex flex-column flex-sm-row py-3 align-items-center justify-content-center">
+							<div className="position-relative col-12 col-sm-8 me-sm-2 mb-2 mb-sm-0">
+								<SearchIcon className="search-icon fs-3 position-absolute top-50 start-0 translate-middle ms-5" />
+								<input
+									// data-testid="inputUser"
+									type="text"
+									className="search-bar w-100 py-2 ps-6 pe-2 rounded-3"
+									placeholder="Search a GIF"
+									value={searchGif}
+									onChange={updateSearch}
+								/>
+								<CloseIcon
+									className={`close-icon fs-3 position-absolute top-50 end-0 translate-middle me-2 ${
+										searchGif ? "fadeIn" : "fadeOut"
+									}`}
+									onClick={handleCloseBtn}
+								/>
+							</div>
 
-						<button
-							className="search-button button w-100 border-0 py-2 px-5 rounded"
-							onClick={handleSearch}
-						>
-							Search
-						</button>
-					</form>
+							<button
+								className="search-button button col-12 col-sm-4 border-0 py-2 rounded"
+								onClick={handleSearch}
+							>
+								Search
+							</button>
+						</form>
+					</div>
 				</Container>
 				<Container>
 					{!isStart && (
