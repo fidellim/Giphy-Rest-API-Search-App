@@ -1,0 +1,25 @@
+.no-result-img {
+	max-width: 150px;
+	margin-bottom: 1rem;
+	height: auto;
+}
+
+.no-result-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	// background-color: gray;
+}
+
+.no-result {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 2rem 0;
+	padding: 2rem;
+	border-radius: 7px;
+	text-align: center;
+	background-color: var(--no-result-bg-color);
+	color: var(--no-result-txt-color);
+}
