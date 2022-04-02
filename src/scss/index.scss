@@ -1,4 +1,5 @@
 @import "base/reset", "base/typography";
-@import "components/navbar", "components/button", "components/searchbar";
+@import "components/navbar", "components/button", "components/searchbar",
+	"components/noresultfound";
 @import "themes/themes";
 @import "vendors/bootstrap";
