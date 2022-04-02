@@ -23,7 +23,7 @@ const MyNavbar = () => {
 		<>
 			<Navbar className="py-3 shadow navbar">
 				<Container>
-					<Navbar.Brand href="#home">
+					<Navbar.Brand>
 						<img
 							alt=""
 							src={giphy_logo}
