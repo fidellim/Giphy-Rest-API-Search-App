@@ -6,6 +6,7 @@ import { GifsResult, GiphyFetch } from "@giphy/js-fetch-api";
 import { Gif, Grid } from "@giphy/react-components";
 import ResizeObserver from "react-resize-observer";
 import { IGif } from "@giphy/js-types";
+import NoResultFound from "./NoResultFound";
 
 const GIPHY_API: string = process.env.REACT_APP_GIPHY_API as string;
 const giphyFetch = new GiphyFetch(GIPHY_API);
@@ -17,13 +18,14 @@ type Props = {
 };
 
 const GridDemo = ({ onGifClick, fetchGifs, query }: Props) => {
-	const [width, setWidth] = useState(window.innerWidth);
+	const [width, setWidth] = useState(window.innerWidth - 20);
 	return (
 		<>
 			<Grid
 				key={query}
 				onGifClick={onGifClick}
 				fetchGifs={fetchGifs}
+				noResultsMessage={<NoResultFound />}
 				width={width}
 				columns={3}
 				gutter={15}
@@ -31,7 +33,7 @@ const GridDemo = ({ onGifClick, fetchGifs, query }: Props) => {
 			/>
 			<ResizeObserver
 				onResize={({ width }) => {
-					setWidth(width);
+					setWidth(width - 20);
 				}}
 			/>
 		</>
@@ -63,8 +65,8 @@ const SearchBar = () => {
 		<>
 			<main className="pt-5 pb-3">
 				<Container>
-					<form className="d-flex py-3 align-items-center justify-content-center">
-						<div className="position-relative w-50 me-2">
+					<form className="d-flex flex-column flex-sm-row py-3 align-items-center justify-content-center">
+						<div className="position-relative w-100  me-sm-2 mb-2 mb-sm-0">
 							<SearchIcon className="search-icon fs-3 position-absolute top-50 start-0 translate-middle ms-5" />
 							<input
 								// data-testid="inputUser"
@@ -83,7 +85,7 @@ const SearchBar = () => {
 						</div>
 
 						<button
-							className="search-button button border-0 py-2 px-5 rounded"
+							className="search-button button w-100 border-0 py-2 px-5 rounded"
 							onClick={handleSearch}
 						>
 							Search
@@ -91,20 +93,22 @@ const SearchBar = () => {
 					</form>
 				</Container>
 				<Container>
-					<GridDemo
-						onGifClick={(
-							gif: IGif,
-							e: React.SyntheticEvent<HTMLElement, Event>
-						) => {
-							// console.log("gif", gif);
-							e.preventDefault();
-							setModalGif(gif);
-						}}
-						fetchGifs={(offset: number) =>
-							giphyFetch.search(query, { offset, limit: 10 })
-						}
-						query={query}
-					/>
+					{!isStart && (
+						<GridDemo
+							onGifClick={(
+								gif: IGif,
+								e: React.SyntheticEvent<HTMLElement, Event>
+							) => {
+								// console.log("gif", gif);
+								e.preventDefault();
+								setModalGif(gif);
+							}}
+							fetchGifs={(offset: number) =>
+								giphyFetch.search(query, { offset, limit: 10 })
+							}
+							query={query}
+						/>
+					)}
 					{isStart && (
 						<GridDemo
 							onGifClick={(
