@@ -1,29 +1,44 @@
-import React, { useState } from "react";
+import React from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import giphy_logo from "../assets/giphy_logo.svg";
 import Switch from "react-switch";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
+import { useAppSelector, useAppDispatch } from "../store/hooks";
+import { RootState } from "../store/rootReducer";
+import { setIsToggled, setTheme } from "../store/toggleTheme";
+import { setSearchGif, setQuery, setIsStart } from "../store/gif";
 
 const MyNavbar = () => {
+	const dispatch = useAppDispatch();
+	// The `state` arg is correctly typed as `RootState` already
+	const { searchGif } = useAppSelector((state: RootState) => state.gif);
+	const { isToggled, theme } = useAppSelector(
+		(state: RootState) => state.toggle_theme
+	);
 	const html = document.querySelector("html");
-	const [isToggled, setIsToggled] = useState(false);
-	const [isDarkTheme, setIsDarkTheme] = useState("theme-light");
-	if (html) html.dataset.theme = isDarkTheme;
+
+	if (html) html.dataset.theme = theme;
 
 	const handleToggle = () => {
-		setIsToggled(!isToggled);
-		isDarkTheme === "theme-dark"
-			? setIsDarkTheme("theme-light")
-			: setIsDarkTheme("theme-dark");
+		dispatch(setIsToggled(!isToggled));
+		theme === "theme-dark"
+			? dispatch(setTheme("theme-light"))
+			: dispatch(setTheme("theme-dark"));
+	};
+
+	const handleLogo = () => {
+		dispatch(setIsStart(true));
+		dispatch(setSearchGif(""));
+		dispatch(setQuery(searchGif));
 	};
 
 	return (
 		<>
 			<Navbar className="py-3 shadow navbar">
 				<Container>
-					<Navbar.Brand>
+					<Navbar.Brand onClick={handleLogo} style={{ cursor: "pointer" }}>
 						<img
 							alt=""
 							src={giphy_logo}

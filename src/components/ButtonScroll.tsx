@@ -1,23 +1,26 @@
-import React, { useState } from "react";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
+import { RootState } from "../store/rootReducer";
+import { useAppSelector, useAppDispatch } from "../store/hooks";
+import { setShowScroll } from "../store/scroll";
 
 const ButtonScroll = () => {
 	// When the user scrolls down 20px from the top of the document, show the button
-	const [showScroll, setShowScroll] = useState<boolean>(false);
+	const { showScroll } = useAppSelector((state: RootState) => state.scroll);
+	const dispatch = useAppDispatch();
 
 	const scrollFunction = () => {
 		if (
 			document.body.scrollTop > 20 ||
 			document.documentElement.scrollTop > 20
 		) {
-			setShowScroll(true);
+			dispatch(setShowScroll(true));
 		} else {
-			setShowScroll(false);
+			dispatch(setShowScroll(false));
 		}
 	};
 
 	const scrollTop = () => {
-		setShowScroll(false);
+		dispatch(setShowScroll(false));
 		window.scrollTo({ top: 0, behavior: "smooth" });
 	};
 
