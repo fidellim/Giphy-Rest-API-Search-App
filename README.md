@@ -27,7 +27,7 @@
 
 - [x] Build an Angular / React, or Vue web app
 - [x] Consume Giphy REST Api for search
-- [ ] The app should deal with data using Redux design pattern on Angular/React
+- [x] The app should deal with data using Redux design pattern on Angular/React
 - [x] User should be able to search gifs by names
 - [x] Gifs should be presented in a grid
 - [x] Data pagination needs to be on. the app should fetch 10 results per call. Once the user
@@ -111,6 +111,7 @@ https://github.com/mars/create-react-app-buildpack.git
 - [GIPHY Developers - I](https://developers.giphy.com/docs/api) - documentation of GIPHY API.
 - [GIPHY Developers - II](https://developers.giphy.com/docs/sdk/#web) - documentation of GIPHY API.
 - [Heroku Deployment](https://medium.com/make-it-heady/deploying-create-react-app-on-heroku-from-github-49447561f670) - guide on deploying React app using Heroku.
+- [Redux Toolkit - TypeScript](https://redux-toolkit.js.org/tutorials/typescript)
 
 ## Author
 
