@@ -4,6 +4,9 @@ import { Grid } from "@giphy/react-components";
 import { IGif } from "@giphy/js-types";
 import ResizeObserver from "react-resize-observer";
 import { GifsResult } from "@giphy/js-fetch-api";
+import { useAppSelector, useAppDispatch } from "../store/hooks";
+import { RootState } from "../store/rootReducer";
+import { setWidth } from "../store/grid";
 
 type Props = {
 	onGifClick: (gif: IGif, e: React.SyntheticEvent<HTMLElement, Event>) => void;
@@ -12,7 +15,9 @@ type Props = {
 };
 
 const GridGif = ({ onGifClick, fetchGifs, query }: Props) => {
-	const [width, setWidth] = useState(window.innerWidth - 20);
+	const { width } = useAppSelector((state: RootState) => state.grid);
+	const dispatch = useAppDispatch();
+
 	return (
 		<>
 			<Grid
@@ -27,7 +32,7 @@ const GridGif = ({ onGifClick, fetchGifs, query }: Props) => {
 			/>
 			<ResizeObserver
 				onResize={({ width }) => {
-					setWidth(width - 20);
+					dispatch(setWidth(width - 20));
 				}}
 			/>
 		</>
